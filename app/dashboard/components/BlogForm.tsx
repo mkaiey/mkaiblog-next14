@@ -21,34 +21,40 @@ import {
 } from "@radix-ui/react-icons";
 import { Switch } from "@/components/ui/switch";
 import { BsSave } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Textarea } from "@/components/ui/textarea";
 import MarkdownPreview from "@/components/markdown/MarkdownPreview";
 import { BlogFormSchema, BlogFormSchemaType } from "../schema";
+import { IBlogDetail } from "@/lib/types";
 
 export default function BlogForm({
   onHandleSubmit,
+  blog
 }: {
   onHandleSubmit: (data: BlogFormSchemaType) => void;
+  blog?: IBlogDetail;
 }) {
+  const [isPending, startTransition] = useTransition();
   const [isPreview, setPreview] = useState(false);
 
   const form = useForm<z.infer<typeof BlogFormSchema>>({
     mode: "all",
     resolver: zodResolver(BlogFormSchema),
     defaultValues: {
-      title: "",
-      content: "",
-      image_url: "",
-      is_premium: false,
-      is_published: true,
+      title: blog?.title || "",
+      content: blog?.blog_content?.content || "",
+      image_url: blog?.image_url || "",
+      is_premium: blog?.is_premium || false,
+      is_published: blog?.is_published || true,
     },
   });
 
   function onSubmit(data: z.infer<typeof BlogFormSchema>) {
-    onHandleSubmit(data);
+    startTransition(() => {
+      onHandleSubmit(data);
+    });
   }
 
   return (
@@ -119,7 +125,9 @@ export default function BlogForm({
             />
           </div>
           <Button
-            className="flex items-center gap-1"
+            className={cn("flex items-center gap-1", {
+              "animate-spin": isPending,
+            })}
             disabled={!form.formState.isValid}
           >
             <BsSave />
