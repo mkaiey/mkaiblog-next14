@@ -16,16 +16,16 @@ export default async function Home() {
         return (
           <Link
             href={"/blog/" + blog.id}
-            className="w-full  border rounded-md dark:bg-graident-dark p-5 hover:ring-2 ring-green-500 transition-all cursor-pointer space-y-5 first:lg:col-span-2 first:md:col-span-3"
+            className="w-full border rounded-md dark:bg-graident-dark p-5 hover:ring-2 ring-green-500 transition-all cursor-pointer space-y-5 first:lg:col-span-2 first:md:col-span-3"
             key={index}
           >
-            <div className="w-full h-72 sm:w-full  md:h-64 xl:h-96  relative">
+            <div className="w-full h-72 sm:w-full md:h-64 xl:h-96  relative">
               <Image
                 priority
                 src={blog.image_url}
                 alt="cover"
                 fill
-                className=" rounded-md object-cover object-center"
+                className="rounded-md object-cover object-center"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
