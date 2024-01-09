@@ -23,7 +23,7 @@ export async function createBlog(data: BlogFormSchemaType) {
     const result = await supabase
       .from("blog_content")
       .insert({ blog_id: resultBlog.data.id!, content: data.content });
-    // revalidation
+    revalidatePath(DASHBOARD);
     return JSON.stringify(result);
   }
 }
@@ -42,6 +42,7 @@ export async function deleteBlogById(blogId: string) {
 
   const result = await supabase.from("blog").delete().eq("id", blogId);
   revalidatePath(DASHBOARD);
+  revalidatePath("/blog/" + blogId);
   return JSON.stringify(result);
 }
 
@@ -50,6 +51,7 @@ export async function updateBlogById(blogId: string, data: BlogFormSchemaType) {
 
   const result = await supabase.from("blog").update(data).eq("id", blogId);
   revalidatePath(DASHBOARD);
+  revalidatePath("/blog/" + blogId);
   return JSON.stringify(result);
 }
 
@@ -79,6 +81,7 @@ export async function updateBlogDetailById(
       .update({ content: data.content })
       .eq("blog_id", blogId);
     revalidatePath(DASHBOARD);
+    revalidatePath("/blog/" + blogId);
     return JSON.stringify(result);
   }
 }
