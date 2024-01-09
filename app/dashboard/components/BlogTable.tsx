@@ -8,7 +8,7 @@ import { BlogFormSchemaType } from "../schema";
 import Link from "next/link";
 
 export default async function BlogTable() {
-  const { data: blogs } = await readBlog();
+  const { data: blog } = await readBlog();
 
   return (
     <div className="overflow-x-auto">
@@ -19,7 +19,7 @@ export default async function BlogTable() {
           <h1>Publish</h1>
         </div>
         <div className="space-y-10 p-5">
-          {blogs?.map((blog, index) => {
+          {blog?.map((blog, index) => {
             const updatePremium = updateBlogById.bind(null, blog.id, {
               is_premium: !blog.is_premium,
             } as BlogFormSchemaType);
