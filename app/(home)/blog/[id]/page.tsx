@@ -5,7 +5,7 @@ import BlogContent from "./components/BlogContent";
 
 export async function generateStaticParams() {
   const { data: blog } = await fetch(
-    process.env.PROD_URL + "/api/blog?id=*" + "*"
+    process.env.PROD_URL + "/api/blog?id=" + "*"
   ).then((res) => res.json());
 
   return blog;
