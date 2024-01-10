@@ -1,4 +1,5 @@
 "use client";
+
 import MarkdownPreview from "@/components/markdown/MarkdownPreview";
 import { Database } from "@/lib/types/supabase";
 import { createBrowserClient } from "@supabase/ssr";

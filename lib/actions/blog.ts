@@ -4,7 +4,7 @@ import { BlogFormSchemaType } from "@/app/dashboard/schema";
 import { revalidatePath } from "next/cache";
 import { createSupabaseServerClient } from "../supabase";
 
-const DASHBOARD = "/dashboard/blog";
+const DASHBOARD = "/dashboard";
 
 export async function createBlog(data: BlogFormSchemaType) {
   const supabase = await createSupabaseServerClient();

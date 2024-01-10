@@ -13,7 +13,10 @@ export default function Footer() {
           <div className="space-y-2 w-full sm:w-96">
             <h1 className="text-3xl font-bold">Mkai Blog</h1>
             <p className="">
-            Explore a world of captivating stories and insightful articles on our blog. Stay updated with our diverse collection of blog posts, written by passionate contributors who share their expertise and unique perspectives.
+              Explore a world of captivating stories and insightful articles on
+              our blog. Stay updated with our diverse collection of blog posts,
+              written by passionate contributors who share their expertise and
+              unique perspectives.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -23,7 +26,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <h1 className="text-sm">&copy; 2024 Mkaiblog. All right reserved</h1>
+        <h1 className="text-sm">&copy; 2024 MkaiBlog. All right reserved</h1>
       </div>
     </footer>
   );

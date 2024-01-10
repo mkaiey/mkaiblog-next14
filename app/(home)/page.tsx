@@ -4,15 +4,15 @@ import Image from "next/image";
 import { readBlog } from "@/lib/actions/blog";
 
 export default async function Home() {
-  let { data: blog } = await readBlog();
+  let { data: blogs } = await readBlog();
 
-  if (!blog?.length) {
-    blog = [];
+  if (!blogs?.length) {
+    blogs = [];
   }
 
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 p-5 xl:p-0">
-      {blog.map((blog, index) => {
+      {blogs.map((blog, index) => {
         return (
           <Link
             href={"/blog/" + blog.id}

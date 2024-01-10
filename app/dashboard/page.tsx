@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className="space-y-5">
       <div className="flex items-center justify-between p-2">
-        <h1 className="text-2xl font-bold">Mkai Blog</h1>
+        <h1 className="text-2xl font-bold">Blogs</h1>
         <Link href="/dashboard/blog/create">
           <Button variant="outline">
             Create <PlusIcon />
