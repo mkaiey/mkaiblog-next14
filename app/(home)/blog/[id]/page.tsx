@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     },
     openGraph: {
       title: blog?.title,
-      url: process.env.PROD_URL + "/blog/" + params.id,
+      url: process.env.SITE_URL + "/blog/" + params.id,
       siteName: "Mkai Blog",
       images: blog?.image_url,
       type: "website",

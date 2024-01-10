@@ -10,7 +10,7 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.PROD_URL!),
+  metadataBase: new URL(process.env.SITE_URL!),
 	title: {
 		template: "%s | Mkai Blog",
 		default: "Mkai Blog",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Explore a world of captivating stories and insightful articles on our blog. From the latest trends to in-depth analyses, our blog covers a wide range of topics to keep you informed and entertained. Stay updated with our diverse collection of blog posts, written by passionate contributors who share their expertise and unique perspectives.",
   openGraph: {
     title: "Mkai Blog",
-    url: process.env.PROD_URL,
+    url: process.env.SITE_URL,
     siteName: "Mkai Blog",
     images: "/home.png",
     type: "website",
