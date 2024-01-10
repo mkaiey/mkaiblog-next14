@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl py-10 px-5 md:p-0 space-y-5 mx-auto flex justify-between md:items-end flex-col md:flex-row">
         <div className="space-y-10">
           <div className="space-y-2 w-full sm:w-96">
-            <h1 className="text-3xl font-bold">Daily Media</h1>
+            <h1 className="text-3xl font-bold">Mkai Blog</h1>
             <p className="">
             Explore a world of captivating stories and insightful articles on our blog. Stay updated with our diverse collection of blog posts, written by passionate contributors who share their expertise and unique perspectives.
             </p>
@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <h1 className="text-sm">&copy; 2024 Mkaiblog.All right reserved</h1>
+        <h1 className="text-sm">&copy; 2024 Mkaiblog. All right reserved</h1>
       </div>
     </footer>
   );
